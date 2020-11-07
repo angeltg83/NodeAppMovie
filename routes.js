@@ -51,6 +51,11 @@ rutasProtegidas.use((req, res, next) => {
 app.post("/setRegister", UsuarioController.setRegister);
 app.post("/getPeliculasListado", UsuarioController.getPeliculasListado);
 app.post("/actores", UsuarioController.listadoActores);
+app.post("/generos", UsuarioController.listadoGeneros);
+app.post("/getPelicula", UsuarioController.getPelicula);
+app.post("/editarPelicula", UsuarioController.editarPelicula);
+
+
 
 
 

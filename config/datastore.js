@@ -6,7 +6,7 @@ const user = process.env.DB_USER || "root";
 
 const password = process.env.DB_PASS || "root";
 
-const database = process.env.DB_DATABASE || "pruebaApp";
+const database = process.env.DB_DATABASE || "movieDB";
 
 // const query = "SELECT * FROM actor";
 
