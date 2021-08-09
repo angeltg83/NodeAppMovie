@@ -13,5 +13,5 @@ app.use("/", routes);
 // node index.js
 // app.use(express.Router());
 app.listen(port, () => {
-  console.info("starting server in port now!! : ", port);
+  console.info("starting server in port  : ", port);
 });
