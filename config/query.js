@@ -1,11 +1,7 @@
-module.exports = async (conn, q, params) => new Promise(
-    (resolve, reject) => {
-      const handler = (error, result) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(result);
-      }
-      conn.query(q, params, handler);
-    });
+const Pool = require("pg").Pool;
+const { conectionDB } = require("./config");
+const pool = new Pool(conectionDB);
+
+module.exports = {
+  pool,
+};

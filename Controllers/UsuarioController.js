@@ -121,14 +121,14 @@
       const query = require("../config/query");
 
       const { form } = req.body;
-      console.log("form update ",form)
+      console.log("form update ", form);
       form.actores = JSON.stringify(form.actores);
       form.genero = JSON.stringify(form.genero); // nuevo campo es {}
 
       const queryUpdate = `UPDATE pelicula SET nombre='${form.nombre}', duracion='${form.duracion}', sinopsis='${form.sinopsis}', genero='${form.genero}', actores='${form.actores}'
                      WHERE id=${form.id}`;
 
-                     console.log("queryUpdate ",queryUpdate)
+      console.log("queryUpdate ", queryUpdate);
       const data = await query(
         await connection().catch((e) => {}),
         queryUpdate
@@ -138,12 +138,23 @@
       return res.status(500).send({ err });
     }
   }),
-  (module.exports = {
-    listadoActores,
-    setRegister,
-    getPeliculasListado,
-    // setActualizaPelicula,
-    getPelicula,
-    listadoGeneros,
-    editarPelicula,
+  (getUser = async (req, res) => {
+    const { pool } = require("../config/query");
+    pool.query("SELECT * FROM dbo.usuario", (err, result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).json(result.rows);
+    });
   });
+module.exports = {
+  getUser,
+  
+  listadoActores,
+  setRegister,
+  getPeliculasListado,
+  // setActualizaPelicula,
+  getPelicula,
+  listadoGeneros,
+  editarPelicula,
+};

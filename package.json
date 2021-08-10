@@ -4,7 +4,7 @@
   "description": "Proyecto base para creacion de app erp",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "Angel Tigua",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.0",
     "mongoose": "^5.9.26",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "pg": "^8.7.1"
   }
 }
